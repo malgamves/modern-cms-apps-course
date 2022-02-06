@@ -1,8 +1,13 @@
 import Head from 'next/head'
-import Image from 'next/image'
+//import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import BlogList from '../components/BlogList'
+import fetch from 'cross-fetch'
 
-export default function Home() {
+import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
+
+export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,45 +17,16 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          welcome to <a href="/">a blog?</a>
-        </h1>
+      <h1 className={styles.title}>
+                welcome to <Link href="/">a blog?</Link>
+            </h1>
 
-        <p className={styles.description}>
-          Get started by editing, i'm trying to see how far thsi line of text goes so here goes nothing - ok wow it goes so far but i need to see
-          ig it can go further. i'm trying to see how far thsi line of text goes so here goes nothing
-         
-        </p>
+            <p className={styles.description}>
+                Get started by editing, im trying to see how far thsi line of text goes so here goes nothing - ok wow it goes so far but i need to see
+                ig it can go further. im trying to see how far thsi line of text goes so here goes nothing
 
-        <div className={styles.grid}>
-          <a href="/split" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API. i'm trying to see how far thsi line of text goes so here goes nothing</p>
-          </a>
-
-          <a href="/split" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes! i'm trying to see how far thsi line of text goes so here goes nothing</p>
-          </a>
-
-          <a
-            href="/split"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects. i'm trying to see how far thsi line of text goes so here goes nothing</p>
-          </a>
-
-          <a
-            href="/split"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel. Just making this longer yeah - how long can this go?
             </p>
-          </a>
-        </div>
+      <BlogList allBlogs={posts.posts} />
       </main>
 
       <footer className={styles.footer}>
@@ -60,4 +36,57 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+
+export async function getStaticProps() {
+
+  const client = new ApolloClient({
+    link: new HttpLink({ uri: 'http://localhost:1337/graphql', fetch }),
+    cache: new InMemoryCache()
+  });
+
+  const { data } = await client.query({
+    query: gql`
+          query {
+              posts {
+                data {
+                  id
+                  attributes {
+                    title
+                    date
+                    cover {
+                      data {
+                        id
+                        attributes {
+                          url
+                          }
+                        }
+                      }
+                    body
+                    slug
+                    author
+                  }
+                }
+              }
+
+              infoPage {
+              data {
+                attributes {
+                  title
+                  body
+                  bg_colour
+                }
+              }
+            } 
+      }
+    `
+  })
+
+
+  return {
+    props: {
+      posts: data,
+    },
+  }
 }

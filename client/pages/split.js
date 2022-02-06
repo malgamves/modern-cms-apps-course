@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
+//import Image from 'next/image'
+import Link from 'next/link'
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -20,7 +22,7 @@ export default function Home() {
                         <p className={styles.descriptionleft}>by author, written on date</p>
 
                         <p className={styles.back}>
-                            <a href="/">&larr; go back home</a>
+                            <Link href="/">&larr; go back home</Link>
                         </p>
                     </div>
                 </div>
