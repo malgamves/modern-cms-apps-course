@@ -10,7 +10,7 @@ import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
 
 import styles from '../../styles/Home.module.css'
 
-export default function Home(posts) {
+export default function Home({ posts }) {
     function reformatDate(fullDate) {
         const date = new Date(fullDate)
         return date.toDateString().slice(4)
@@ -40,7 +40,7 @@ export default function Home(posts) {
                 <div className={[styles.split, styles.right].join(" ")}>
                     <div className={styles.centered}>
                         <h2>John Doe</h2>
-                        <p> <ReactMarkdown source={posts.attributes.body} /> </p>
+                        <p>{posts.attributes.body}</p> 
                     </div>
                 </div>
             </main>
