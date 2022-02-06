@@ -26,18 +26,18 @@
 .footer {
   display: flex;
   flex: 1;
-  border-top: 1px solid red;
+  border-top: 1px solid #FF6961;
   justify-content: center;
   align-items: center;
 }
 
 .footer a {
-  color: red;
+  color: #FF6961;
   font-weight: bold;
 }
 
 .title a {
-  color: red;
+  color: #FF6961;
   text-decoration: none;
 }
 
@@ -63,7 +63,7 @@
   padding-bottom: 1rem;
   line-height: 1.5;
   font-size: 1rem;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .descriptionleft {
@@ -91,8 +91,7 @@
 }
 
 .card {
-  margin: 1rem;
-  padding: 0.5rem;
+  margin-left: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -105,8 +104,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: red;
-  border-color: red;
+  color: #FF6961;
+  border-color: #FF6961;
 }
 
 .card h2 {
@@ -146,13 +145,13 @@
 /* Control the left side */
 .left {
   left: 0;
-  background-color: yellow;
+  background-color: #FDFD96;
 }
 
 /* Control the right side */
 .right {
   right: 0;
-  background-color: red;
+  background-color: #FF6961;
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -161,19 +160,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -30%);
-  text-align: center;
+  text-align: left;
 }
 
 /* Style the image inside the centered container, if needed */
 .centered img {
   width: 150px;
-  border-radius: 50%;
+  transform: translate(10%, 10%);
 } 
 
 .back:hover,
 .back:focus,
 .back:active {
-  color: red;
+  color: #FF6961;
 }
 
 .back {
@@ -181,7 +180,7 @@
   padding-bottom: 1rem;
   line-height: 1.5;
   font-size: 1rem;
-  color: red;
+  color: #FF6961;
   font-weight: bold;
   text-align: left
 }
