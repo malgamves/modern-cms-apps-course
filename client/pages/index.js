@@ -68,16 +68,6 @@ export async function getStaticProps() {
                   }
                 }
               }
-
-              infoPage {
-              data {
-                attributes {
-                  title
-                  body
-                  bg_colour
-                }
-              }
-            } 
       }
     `
   })
