@@ -54,14 +54,6 @@ export async function getStaticProps() {
                   attributes {
                     title
                     date
-                    cover {
-                      data {
-                        id
-                        attributes {
-                          url
-                          }
-                        }
-                      }
                     body
                     slug
                     author

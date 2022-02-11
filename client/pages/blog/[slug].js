@@ -65,14 +65,6 @@ export async function getStaticProps({ ...ctx }) {
                 date
                 body
                 slug
-                cover {
-                  data {
-                    id
-                    attributes {
-                      url
-                    }
-                    }
-                  }
                 author
               }
             }
