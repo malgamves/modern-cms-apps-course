@@ -1,6 +1,6 @@
 # Building Modern CMS Driven Web Applications
 
-So you want to learn how to build Modern CMS Driven Web Applications? You've come to the write place. 
+So you want to learn how to build Modern CMS Driven Web Applications? You've come to the right place. 
 
 ## Who is this course for
 
