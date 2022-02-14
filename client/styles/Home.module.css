@@ -145,7 +145,7 @@
   background-color: #fdfd96;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .left {
     display: inline-block;
     position: relative;
@@ -160,7 +160,7 @@
   background-color: #ff6961;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .right {
     display: inline-block;
     position: relative;
