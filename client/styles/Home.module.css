@@ -145,11 +145,31 @@
   background-color: #fdfd96;
 }
 
+@media (max-width: 768px) {
+  .left {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    min-height: 490px;
+  }
+}
+
 /* Control the right side */
 .right {
   right: 0;
   background-color: #ff6961;
 }
+
+@media (max-width: 768px) {
+  .right {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    min-height: 490px;
+    }
+}
+
+
 
 /* If you want the content centered horizontally and vertically */
 .centered {
