@@ -3,6 +3,8 @@ import Link from 'next/link'
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
 import fetch from 'cross-fetch'
+import { server } from '../../config';
+
 
 import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
 
@@ -50,7 +52,7 @@ export async function getStaticProps({ ...ctx }) {
     let pageData = []
   
     const client = new ApolloClient({
-      link: new HttpLink({ uri: 'http://localhost:1337/graphql', fetch }),
+      link: new HttpLink({ uri: `${server}/graphql`, fetch }),
       cache: new InMemoryCache()
     });
   
@@ -90,7 +92,7 @@ export async function getStaticProps({ ...ctx }) {
   
   export async function getStaticPaths() {
     const client = new ApolloClient({
-      link: new HttpLink({ uri: 'http://localhost:1337/graphql', fetch }),
+      link: new HttpLink({ uri: `${server}/graphql`, fetch }),
       cache: new InMemoryCache()
     });
   
