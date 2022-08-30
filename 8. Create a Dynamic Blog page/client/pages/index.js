@@ -1,8 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
+
+import fetch from 'cross-fetch'
+import { server } from '../config';
+
+import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
+
+import BlogList from '../components/BlogList'
+
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ posts }) {
+  console.log(posts)
   return (
     <div className={styles.container}>
       <Head>
@@ -21,6 +30,8 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
+        <BlogList allBlogs={posts.posts} />
+
       </main>
 
       <footer className={styles.footer}>
@@ -37,4 +48,39 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+
+export async function getStaticProps() {
+
+  const client = new ApolloClient({
+    link: new HttpLink({ uri: `${server}/graphql`, fetch }),
+    cache: new InMemoryCache()
+  });
+  
+  const { data } = await client.query({
+    query: gql`
+          query {
+              posts {
+                data {
+                  id
+                  attributes {
+                    title
+                    date
+                    body
+                    slug
+                    author
+                  }
+                }
+              }
+      }
+    `
+  })
+
+
+  return {
+    props: {
+      posts: data,
+    },
+  }
 }
