@@ -1,0 +1,198 @@
+.container {
+  padding: 0 2rem;
+}
+
+.containerblog {
+  padding: 0;
+}
+
+.mainblog {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: left;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  border-top: 1px solid #ff6961;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  color: #ff6961;
+  font-weight: bold;
+}
+
+.title a {
+  color: #ff6961;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin-left: 1.5rem;
+  line-height: 1;
+  font-size: 3rem;
+}
+
+.title,
+.description {
+  text-align: left;
+}
+
+.description {
+  margin-left: 1.5rem;
+  padding-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  max-width: 450px;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+
+.card {
+  margin-left: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 1000px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #ff6961;
+  border-color: #ff6961;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.descriptionleft {
+  margin-left: 1.5rem;
+  line-height: 1;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #fdfd96;
+}
+
+@media (max-width: 600px) {
+  .left {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    min-height: 490px;
+  }
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #ff6961;
+}
+
+@media (max-width: 600px) {
+  .right {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    min-height: 490px;
+    }
+}
+
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: left;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  transform: translate(10%, 10%);
+}
